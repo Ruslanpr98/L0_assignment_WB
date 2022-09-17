@@ -14,7 +14,8 @@ func main() {
 	sc, err := stan.Connect("test-cluster", "publisher", stan.NatsURL(stan.DefaultNatsURL))
 
 	if err != nil {
-		log.Panicln("Error connecting to NATS", err)
+		log.Panicln("Error connecting to NATS as publisher", err)
+		return
 	}
 
 	defer sc.Close()
@@ -23,6 +24,7 @@ func main() {
 		values, err := ioutil.ReadFile(value)
 		if err != nil {
 			log.Panicln("Error reading file", err)
+			return
 		}
 		sc.Publish("orders_model", values)
 	}
