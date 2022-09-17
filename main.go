@@ -42,6 +42,7 @@ func show_all_orders(w http.ResponseWriter, req *http.Request) {
 		result, err := json.Marshal(value)
 		if err != nil {
 			log.Println("No data exists", err)
+			http.Error(w, http.StatusText(500), 500)
 		}
 
 		io.WriteString(w, string(result))
