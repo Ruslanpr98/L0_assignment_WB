@@ -1,5 +1,8 @@
 # Тестовое задание:
 
+# ДЕМО
+![](https://github.com/Ruslanpr98/L0_assignment_WB/blob/master/Example.gif)
+
 В БД: 
 <br>Развернуть локально postgresql
 <br>Создать свою бд
